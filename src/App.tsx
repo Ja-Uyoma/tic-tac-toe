@@ -12,4 +12,12 @@ function App() {
   );
 }
 
+function Cell({ value }: { value: string }) {
+  return (
+    <div>
+      <button type="button">{value}</button>
+    </div>
+  );
+}
+
 export default App;
