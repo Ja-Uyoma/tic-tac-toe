@@ -16,6 +16,29 @@ function Cell({
   );
 }
 
+function Board() {
+  const [squares, setSquares] = useState(new Array<string>(9).fill(" "));
+  const [currentValue, setCurrentValue] = useState("X");
+
+  const handleClick = (idx: number) => {
+    const squaresCopy = [...squares];
+
+    if (squaresCopy[idx] === " ") {
+      squaresCopy[idx] = currentValue;
+      setSquares(squaresCopy);
+      setCurrentValue(currentValue === "X" ? "O" : "X");
+    }
+  };
+
+  return (
+    <>
+      {squares.map((val, idx) => (
+        <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
+      ))}
+    </>
+  );
+}
+
 function App() {
   const [cells, setCells] = useState(new Array(9).fill(" "));
   const [value, setValue] = useState("X");
