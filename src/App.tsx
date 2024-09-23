@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 function App() {
   return (
     <div>
@@ -6,15 +8,15 @@ function App() {
       </header>
 
       <main className="grid grid-cols-3 grid-rows-3">
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
-        <Cell value="" />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="" onClick={() => console.log("Clicked!")} />
       </main>
 
       <footer className="text-center">
@@ -24,10 +26,16 @@ function App() {
   );
 }
 
-function Cell({ value }: { value: string }) {
+function Cell({
+  value,
+  onClick,
+}: {
+  value: string;
+  onClick: MouseEventHandler;
+}) {
   return (
     <div className="border border-black cursor-pointer">
-      <button type="button" className="w-full">
+      <button type="button" onClick={onClick} className="w-full">
         {value}
       </button>
     </div>
