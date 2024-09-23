@@ -32,7 +32,7 @@ function Board() {
 
   return (
     <>
-      <div>
+      <div className="text-center">
         <p>{currentValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
       </div>
 
