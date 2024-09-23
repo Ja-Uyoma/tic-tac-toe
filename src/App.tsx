@@ -47,7 +47,7 @@ function Board() {
         ))}
       </div>
 
-      <div>
+      <div className="flex justify-center">
         <button type="button" onClick={() => handleRestart()}>
           Restart
         </button>
