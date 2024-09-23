@@ -32,9 +32,15 @@ function Board() {
 
   return (
     <>
-      {cells.map((val, idx) => (
-        <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
-      ))}
+      <div>
+        <p>{currentValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
+      </div>
+
+      <div className="grid grid-cols-3 grid-rows-3">
+        {cells.map((val, idx) => (
+          <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
+        ))}
+      </div>
     </>
   );
 }
@@ -46,7 +52,7 @@ function App() {
         <h1>Tic-Tac-Toe</h1>
       </header>
 
-      <main className="grid grid-cols-3 grid-rows-3">
+      <main>
         <Board />
       </main>
 
