@@ -1,6 +1,8 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, useState } from "react";
 
 function App() {
+  const [value, setValue] = useState(" ");
+
   return (
     <div>
       <header className="text-center">
@@ -8,15 +10,15 @@ function App() {
       </header>
 
       <main className="grid grid-cols-3 grid-rows-3">
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
-        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
+        <Cell value={value} onClick={() => console.log("Clicked!")} />
       </main>
 
       <footer className="text-center">
