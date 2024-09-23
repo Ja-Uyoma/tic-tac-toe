@@ -27,7 +27,9 @@ function App() {
 function Cell({ value }: { value: string }) {
   return (
     <div className="border border-black cursor-pointer">
-      <button type="button">{value}</button>
+      <button type="button" className="w-full">
+        {value}
+      </button>
     </div>
   );
 }
