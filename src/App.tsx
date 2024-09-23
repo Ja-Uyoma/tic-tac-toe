@@ -8,15 +8,15 @@ function App() {
       </header>
 
       <main className="grid grid-cols-3 grid-rows-3">
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
-        <Cell value="" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
+        <Cell value="A" onClick={() => console.log("Clicked!")} />
       </main>
 
       <footer className="text-center">
