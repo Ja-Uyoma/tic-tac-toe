@@ -1,5 +1,21 @@
 import { MouseEventHandler, useState } from "react";
 
+function Cell({
+  value,
+  onClick,
+}: {
+  value: string;
+  onClick: MouseEventHandler;
+}) {
+  return (
+    <div className="border border-black cursor-pointer">
+      <button type="button" onClick={onClick} className="w-full min-h-4">
+        {value}
+      </button>
+    </div>
+  );
+}
+
 function App() {
   const [cells, setCells] = useState(new Array(9).fill(" "));
   const [value, setValue] = useState(" ");
@@ -29,22 +45,6 @@ function App() {
       <footer className="text-center">
         <p>Copyright © 2024 Jimmy Givans Omondi</p>
       </footer>
-    </div>
-  );
-}
-
-function Cell({
-  value,
-  onClick,
-}: {
-  value: string;
-  onClick: MouseEventHandler;
-}) {
-  return (
-    <div className="border border-black cursor-pointer">
-      <button type="button" onClick={onClick} className="w-full min-h-4">
-        {value}
-      </button>
     </div>
   );
 }
