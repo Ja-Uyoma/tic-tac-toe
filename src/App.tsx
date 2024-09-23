@@ -41,7 +41,7 @@ function Board() {
 
 function App() {
   return (
-    <div>
+    <>
       <header className="text-center">
         <h1>Tic-Tac-Toe</h1>
       </header>
@@ -53,7 +53,7 @@ function App() {
       <footer className="text-center">
         <p>Copyright © 2024 Jimmy Givans Omondi</p>
       </footer>
-    </div>
+    </>
   );
 }
 
