@@ -18,7 +18,7 @@ function Cell({
 
 function App() {
   const [cells, setCells] = useState(new Array(9).fill(" "));
-  const [value, setValue] = useState(" ");
+  const [value, setValue] = useState("X");
 
   const handleClick = (idx: number) => {
     const cellsCopy = [...cells];
