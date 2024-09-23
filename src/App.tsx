@@ -40,19 +40,6 @@ function Board() {
 }
 
 function App() {
-  const [cells, setCells] = useState(new Array(9).fill(" "));
-  const [value, setValue] = useState("X");
-
-  const handleClick = (idx: number) => {
-    const cellsCopy = [...cells];
-
-    if (cellsCopy[idx] === " ") {
-      cellsCopy[idx] = value;
-      setCells(cellsCopy);
-      setValue(value === "X" ? "O" : "X");
-    }
-  };
-
   return (
     <div>
       <header className="text-center">
@@ -60,9 +47,7 @@ function App() {
       </header>
 
       <main className="grid grid-cols-3 grid-rows-3">
-        {cells.map((val, idx) => (
-          <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
-        ))}
+        <Board />
       </main>
 
       <footer className="text-center">
