@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <header>
+      <header className="text-center">
         <h1>Tic-Tac-Toe</h1>
       </header>
 
@@ -17,7 +17,7 @@ function App() {
         <Cell value="" />
       </main>
 
-      <footer>
+      <footer className="text-center">
         <p>Copyright © 2024 Jimmy Givans Omondi</p>
       </footer>
     </div>
