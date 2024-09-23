@@ -47,7 +47,7 @@ function Cell({
 }) {
   return (
     <div className="border border-black cursor-pointer">
-      <button type="button" onClick={onClick} className="w-full">
+      <button type="button" onClick={onClick} className="w-full min-h-4">
         {value}
       </button>
     </div>
