@@ -17,22 +17,22 @@ function Cell({
 }
 
 function Board() {
-  const [squares, setSquares] = useState(new Array<string>(9).fill(" "));
+  const [cells, setCells] = useState(new Array<string>(9).fill(" "));
   const [currentValue, setCurrentValue] = useState("X");
 
   const handleClick = (idx: number) => {
-    const squaresCopy = [...squares];
+    const squaresCopy = [...cells];
 
     if (squaresCopy[idx] === " ") {
       squaresCopy[idx] = currentValue;
-      setSquares(squaresCopy);
+      setCells(squaresCopy);
       setCurrentValue(currentValue === "X" ? "O" : "X");
     }
   };
 
   return (
     <>
-      {squares.map((val, idx) => (
+      {cells.map((val, idx) => (
         <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
       ))}
     </>
