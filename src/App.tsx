@@ -4,7 +4,13 @@ function App() {
   const [value, setValue] = useState(" ");
 
   const handleClick = () => {
-    console.log("Clicked!");
+    if (value === " ") {
+      setValue("X");
+    } else if (value === "X") {
+      setValue("O");
+    } else if (value === "O") {
+      setValue("X");
+    }
   };
 
   return (
