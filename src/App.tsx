@@ -30,6 +30,11 @@ function Board() {
     }
   };
 
+  const handleRestart = () => {
+    setCells(new Array(9).fill(" "));
+    setCurrentValue("X");
+  };
+
   return (
     <>
       <div className="text-center">
@@ -40,6 +45,12 @@ function Board() {
         {cells.map((val, idx) => (
           <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
         ))}
+      </div>
+
+      <div>
+        <button type="button" onClick={() => handleRestart()}>
+          Restart
+        </button>
       </div>
     </>
   );
