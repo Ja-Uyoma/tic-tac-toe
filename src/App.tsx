@@ -5,7 +5,7 @@ function App() {
         <h1>Tic-Tac-Toe</h1>
       </header>
 
-      <main>
+      <main className="grid grid-cols-3 grid-rows-3">
         <Cell value="" />
         <Cell value="" />
         <Cell value="" />
