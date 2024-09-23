@@ -21,11 +21,11 @@ function Board() {
   const [currentValue, setCurrentValue] = useState("X");
 
   const handleClick = (idx: number) => {
-    const squaresCopy = [...cells];
+    const cellsCopy = [...cells];
 
-    if (squaresCopy[idx] === " ") {
-      squaresCopy[idx] = currentValue;
-      setCells(squaresCopy);
+    if (cellsCopy[idx] === " ") {
+      cellsCopy[idx] = currentValue;
+      setCells(cellsCopy);
       setCurrentValue(currentValue === "X" ? "O" : "X");
     }
   };
