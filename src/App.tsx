@@ -37,7 +37,7 @@ function Board() {
 
   return (
     <>
-      <div className="text-center">
+      <div className="text-center py-2">
         <p>{currentValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
       </div>
 
@@ -47,7 +47,7 @@ function Board() {
         ))}
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center py-2">
         <button type="button" onClick={() => handleRestart()}>
           Restart
         </button>
@@ -59,7 +59,7 @@ function Board() {
 function App() {
   return (
     <>
-      <header className="text-center">
+      <header className="text-center py-4">
         <h1>Tic-Tac-Toe</h1>
       </header>
 
@@ -67,7 +67,7 @@ function App() {
         <Board />
       </main>
 
-      <footer className="text-center">
+      <footer className="text-center py-4">
         <p>Copyright © 2024 Jimmy Givans Omondi</p>
       </footer>
     </>
