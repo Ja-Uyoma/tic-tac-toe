@@ -1,15 +1,16 @@
 import { MouseEventHandler, useState } from "react";
 
 function App() {
+  const [cells, setCells] = useState(new Array(9).fill(" "));
   const [value, setValue] = useState(" ");
 
-  const handleClick = () => {
-    if (value === " ") {
-      setValue("X");
-    } else if (value === "X") {
-      setValue("O");
-    } else if (value === "O") {
-      setValue("X");
+  const handleClick = (idx: number) => {
+    const cellsCopy = [...cells];
+
+    if (cellsCopy[idx] === " ") {
+      cellsCopy[idx] = value;
+      setCells(cellsCopy);
+      setValue(value === "X" ? "O" : "X");
     }
   };
 
@@ -20,15 +21,9 @@ function App() {
       </header>
 
       <main className="grid grid-cols-3 grid-rows-3">
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
-        <Cell value={value} onClick={() => handleClick()} />
+        {cells.map((val, idx) => (
+          <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
+        ))}
       </main>
 
       <footer className="text-center">
