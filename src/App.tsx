@@ -16,6 +16,14 @@ function Cell({
   );
 }
 
+function StatusBoard({ status }: { status: string }) {
+  return (
+    <div className="text-center py-2">
+      <p>{status}</p>
+    </div>
+  );
+}
+
 function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
   return (
     <div className="flex justify-center py-2">
@@ -49,9 +57,7 @@ function Board() {
 
   return (
     <>
-      <div className="text-center py-2">
-        <p>{status}</p>
-      </div>
+      <StatusBoard status={status} />
 
       <div className="grid grid-cols-3 grid-rows-3">
         {cells.map((val, idx) => (
