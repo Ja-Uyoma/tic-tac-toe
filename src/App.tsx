@@ -18,15 +18,15 @@ function Cell({
 
 function Board() {
   const [cells, setCells] = useState(new Array<string>(9).fill(" "));
-  const [currentValue, setCurrentValue] = useState("X");
+  const [cellValue, setCurrentValue] = useState("X");
 
   const handleClick = (idx: number) => {
     const cellsCopy = [...cells];
 
     if (cellsCopy[idx] === " ") {
-      cellsCopy[idx] = currentValue;
+      cellsCopy[idx] = cellValue;
       setCells(cellsCopy);
-      setCurrentValue(currentValue === "X" ? "O" : "X");
+      setCurrentValue(cellValue === "X" ? "O" : "X");
     }
   };
 
@@ -38,7 +38,7 @@ function Board() {
   return (
     <>
       <div className="text-center py-2">
-        <p>{currentValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
+        <p>{cellValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
       </div>
 
       <div className="grid grid-cols-3 grid-rows-3">
