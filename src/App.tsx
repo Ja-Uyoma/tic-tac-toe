@@ -53,6 +53,7 @@ function Board() {
   const toggleRestart = () => {
     setCells(new Array(9).fill(" "));
     setCellValue("X");
+    setStatus("Player X's Turn");
   };
 
   return (
