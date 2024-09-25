@@ -2,14 +2,14 @@ import { MouseEventHandler, useState } from "react";
 
 function Cell({
   value,
-  onClick,
+  onClickHandler,
 }: {
   value: string;
-  onClick: MouseEventHandler;
+  onClickHandler: MouseEventHandler;
 }) {
   return (
     <div className="border border-black cursor-pointer">
-      <button type="button" onClick={onClick} className="size-full">
+      <button type="button" onClick={onClickHandler} className="size-full">
         {value}
       </button>
     </div>
@@ -55,7 +55,7 @@ function Board() {
 
       <div className="grid grid-cols-3 grid-rows-3">
         {cells.map((val, idx) => (
-          <Cell key={idx} value={val} onClick={() => handleClick(idx)} />
+          <Cell key={idx} value={val} onClickHandler={() => handleClick(idx)} />
         ))}
       </div>
 
