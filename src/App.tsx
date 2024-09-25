@@ -19,6 +19,7 @@ function Cell({
 function Board() {
   const [cells, setCells] = useState(new Array<string>(9).fill(" "));
   const [cellValue, setCurrentValue] = useState("X");
+  const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
     const cellsCopy = [...cells];
@@ -27,6 +28,7 @@ function Board() {
       cellsCopy[idx] = cellValue;
       setCells(cellsCopy);
       setCurrentValue(cellValue === "X" ? "O" : "X");
+      setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
     }
   };
 
@@ -38,11 +40,7 @@ function Board() {
   return (
     <>
       <div className="text-center py-2">
-        <p>
-          {cellValue === "X"
-            ? `Player ${cellValue}'s Turn`
-            : `Player ${cellValue}'s Turn`}
-        </p>
+        <p>{status}</p>
       </div>
 
       <div className="grid grid-cols-3 grid-rows-3">
