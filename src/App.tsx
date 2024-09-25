@@ -16,6 +16,16 @@ function Cell({
   );
 }
 
+function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
+  return (
+    <div className="flex justify-center py-2">
+      <button type="button" onClick={onClickHandler}>
+        Restart
+      </button>
+    </div>
+  );
+}
+
 function Board() {
   const [cells, setCells] = useState(new Array<string>(9).fill(" "));
   const [cellValue, setCellValue] = useState("X");
@@ -49,11 +59,7 @@ function Board() {
         ))}
       </div>
 
-      <div className="flex justify-center py-2">
-        <button type="button" onClick={() => toggleRestart()}>
-          Restart
-        </button>
-      </div>
+      <Restart onClickHandler={() => toggleRestart()} />
     </>
   );
 }
