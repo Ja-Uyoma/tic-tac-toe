@@ -35,23 +35,23 @@ function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
 }
 
 function Board() {
-  const [cells, setCells] = useState(new Array<string>(9).fill(" "));
+  const [grid, setGrid] = useState(new Array<string>(9).fill(" "));
   const [cellValue, setCellValue] = useState("X");
   const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
-    const cellsCopy = [...cells];
+    const cellsCopy = [...grid];
 
     if (cellsCopy[idx] === " ") {
       cellsCopy[idx] = cellValue;
-      setCells(cellsCopy);
+      setGrid(cellsCopy);
       setCellValue(cellValue === "X" ? "O" : "X");
       setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
     }
   };
 
   const restartGame = () => {
-    setCells(new Array(9).fill(" "));
+    setGrid(new Array(9).fill(" "));
     setCellValue("X");
     setStatus("Player X's Turn");
   };
@@ -61,7 +61,7 @@ function Board() {
       <StatusBoard status={status} />
 
       <div className="grid grid-cols-3 grid-rows-3">
-        {cells.map((val, idx) => (
+        {grid.map((val, idx) => (
           <Cell key={idx} value={val} onClickHandler={() => handleClick(idx)} />
         ))}
       </div>
