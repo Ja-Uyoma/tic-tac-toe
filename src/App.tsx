@@ -38,7 +38,11 @@ function Board() {
   return (
     <>
       <div className="text-center py-2">
-        <p>{cellValue === "X" ? "Player X's Turn" : "Player O's Turn"}</p>
+        <p>
+          {cellValue === "X"
+            ? `Player ${cellValue}'s Turn`
+            : `Player ${cellValue}'s Turn`}
+        </p>
       </div>
 
       <div className="grid grid-cols-3 grid-rows-3">
