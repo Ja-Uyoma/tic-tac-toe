@@ -32,7 +32,7 @@ function Board() {
     }
   };
 
-  const handleRestart = () => {
+  const toggleRestart = () => {
     setCells(new Array(9).fill(" "));
     setCellValue("X");
   };
@@ -50,7 +50,7 @@ function Board() {
       </div>
 
       <div className="flex justify-center py-2">
-        <button type="button" onClick={() => handleRestart()}>
+        <button type="button" onClick={() => toggleRestart()}>
           Restart
         </button>
       </div>
