@@ -50,7 +50,7 @@ function Board() {
     }
   };
 
-  const toggleRestart = () => {
+  const restartGame = () => {
     setCells(new Array(9).fill(" "));
     setCellValue("X");
     setStatus("Player X's Turn");
@@ -66,7 +66,7 @@ function Board() {
         ))}
       </div>
 
-      <Restart onClickHandler={() => toggleRestart()} />
+      <Restart onClickHandler={() => restartGame()} />
     </>
   );
 }
