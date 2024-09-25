@@ -18,7 +18,7 @@ function Cell({
 
 function Board() {
   const [cells, setCells] = useState(new Array<string>(9).fill(" "));
-  const [cellValue, setCurrentValue] = useState("X");
+  const [cellValue, setCellValue] = useState("X");
   const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
@@ -27,14 +27,14 @@ function Board() {
     if (cellsCopy[idx] === " ") {
       cellsCopy[idx] = cellValue;
       setCells(cellsCopy);
-      setCurrentValue(cellValue === "X" ? "O" : "X");
+      setCellValue(cellValue === "X" ? "O" : "X");
       setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
     }
   };
 
   const handleRestart = () => {
     setCells(new Array(9).fill(" "));
-    setCurrentValue("X");
+    setCellValue("X");
   };
 
   return (
