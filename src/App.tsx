@@ -1,4 +1,5 @@
 import { MouseEventHandler, useState } from "react";
+import { getWinner } from "./logic";
 
 function Cell({
   value,
@@ -40,6 +41,10 @@ function Board() {
   const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
+    if (getWinner(grid)) {
+      return;
+    }
+
     const gridCopy = [...grid];
 
     if (gridCopy[idx] === " ") {
