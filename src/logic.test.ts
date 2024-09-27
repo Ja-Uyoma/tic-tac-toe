@@ -20,6 +20,8 @@ describe("getWinner", () => {
     expect(winner).toBe(null);
   });
 
+  it("returns null if the grid contains invalid input", () => {
+    const grid = new Array(9).fill(" ");
     const winner = getWinner(grid);
     expect(winner).toBe(null);
   });
