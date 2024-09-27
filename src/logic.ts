@@ -1,4 +1,8 @@
 export function getWinner(grid: string[]): string | null {
+  if (!Array.isArray(grid) || !grid.length) {
+    return null;
+  }
+
   const winningCombinations = [
     [0, 4, 8],
     [2, 4, 6],
