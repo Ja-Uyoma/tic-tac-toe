@@ -1,4 +1,5 @@
-export function getWinner(grid: string[]): string | null {
+export type CrossOrNought = "X" | "O";
+
   if (!Array.isArray(grid) || !grid.length) {
     return null;
   }
