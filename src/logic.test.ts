@@ -13,4 +13,10 @@ describe("getWinner", () => {
     const winner = getWinner(grid);
     expect(winner).toBe(null);
   });
+
+  it("returns null if the grid is empty", () => {
+    const grid: string[] = [];
+    const winner = getWinner(grid);
+    expect(winner).toBe(null);
+  });
 });
