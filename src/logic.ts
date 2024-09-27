@@ -15,10 +15,22 @@ export function getWinner(grid: string[]): CrossOrNought | null {
   for (let i = 0; i < winningCombinations.length; i++) {
     const [a, b, c] = winningCombinations[i];
 
-    if (grid[a] === grid[b] && grid[b] === grid[c]) {
-      return grid[a] as CrossOrNought;
+    if (
+      isCrossOrNought(grid[a]) &&
+      isCrossOrNought(grid[b]) &&
+      isCrossOrNought(grid[c])
+    ) {
+      if (grid[a] === grid[b] && grid[b] === grid[c]) {
+        return grid[a] as CrossOrNought;
+      }
+    } else {
+      continue;
     }
   }
 
   return null;
+}
+
+function isCrossOrNought(character: string) {
+  return character === "X" || character === "O";
 }
