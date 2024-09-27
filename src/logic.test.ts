@@ -1,21 +1,25 @@
 import { describe, expect, it } from "vitest";
-import { CrossOrNought, getWinner } from "./logic";
+import { getWinner } from "./logic";
 
 describe("getWinner", () => {
   it("gets the right winner if there is one", () => {
-    const grid: CrossOrNought[] = ["X", "O", "O", "X", "X", "O", "O", "X", "X"];
+    const grid: string[] = ["X", "O", "O", "X", "X", "O", "O", "X", "X"];
     const winner = getWinner(grid);
     expect(winner).toBe("X");
   });
 
   it("returns null if there is no winner", () => {
-    const grid: CrossOrNought[] = ["X", "O", "X", "X", "O", "O", "O", "X", "X"];
+    const grid: string[] = ["X", "O", "X", "X", "O", "O", "O", "X", "X"];
     const winner = getWinner(grid);
     expect(winner).toBe(null);
   });
 
   it("returns null if the grid is empty", () => {
-    const grid: CrossOrNought[] = [];
+    const grid: string[] = [];
+    const winner = getWinner(grid);
+    expect(winner).toBe(null);
+  });
+
     const winner = getWinner(grid);
     expect(winner).toBe(null);
   });
