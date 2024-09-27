@@ -1,6 +1,6 @@
 export type CrossOrNought = "X" | "O";
 
-export function getWinner(grid: CrossOrNought[]): CrossOrNought | null {
+export function getWinner(grid: string[]): CrossOrNought | null {
   if (!Array.isArray(grid) || !grid.length) {
     return null;
   }
@@ -16,7 +16,7 @@ export function getWinner(grid: CrossOrNought[]): CrossOrNought | null {
     const [a, b, c] = winningCombinations[i];
 
     if (grid[a] === grid[b] && grid[b] === grid[c]) {
-      return grid[a];
+      return grid[a] as CrossOrNought;
     }
   }
 
