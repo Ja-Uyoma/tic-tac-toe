@@ -35,8 +35,13 @@ function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
   );
 }
 
-function Board() {
-  const [grid, setGrid] = useState(new Array<string>(9).fill(" "));
+function Board({
+  grid,
+  updateGrid,
+}: {
+  grid: string[];
+  updateGrid: (grid: string[]) => void;
+}) {
   const [cellValue, setCellValue] = useState("X");
   const [status, setStatus] = useState(`Player X's Turn`);
 
@@ -49,14 +54,14 @@ function Board() {
 
     if (gridCopy[idx] === " ") {
       gridCopy[idx] = cellValue;
-      setGrid(gridCopy);
+      updateGrid(gridCopy);
       setCellValue(cellValue === "X" ? "O" : "X");
       setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
     }
   };
 
   const restartGame = () => {
-    setGrid(new Array(9).fill(" "));
+    updateGrid(new Array(9).fill(" "));
     setCellValue("X");
     setStatus("Player X's Turn");
   };
@@ -76,6 +81,16 @@ function Board() {
   );
 }
 
+function Game() {
+  const [grid, setGrid] = useState(new Array<string>(9).fill(" "));
+
+  return (
+    <>
+      <Board grid={grid} updateGrid={setGrid} />
+    </>
+  );
+}
+
 function App() {
   return (
     <>
@@ -84,7 +99,7 @@ function App() {
       </header>
 
       <main>
-        <Board />
+        <Game />
       </main>
 
       <footer className="text-center py-4">
