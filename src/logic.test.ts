@@ -9,7 +9,7 @@ describe("getWinner", () => {
   });
 
   it("returns null if there is no winner", () => {
-    const grid = new Array(9).fill(" ");
+    const grid = ["X", "O", "X", "X", "O", "O", "O", "X", "X"];
     const winner = getWinner(grid);
     expect(winner).toBe(null);
   });
