@@ -1,5 +1,6 @@
 export type CrossOrNought = "X" | "O";
 
+export function getWinner(grid: CrossOrNought[]): CrossOrNought | null {
   if (!Array.isArray(grid) || !grid.length) {
     return null;
   }
