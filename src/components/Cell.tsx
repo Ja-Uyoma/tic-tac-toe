@@ -9,7 +9,7 @@ export function Cell({
   onClickHandler: MouseEventHandler;
 }) {
   return (
-    <div className="border border-black cursor-pointer">
+    <div className="border border-black cursor-pointer hover:bg-slate-100">
       <button
         type="button"
         onClick={onClickHandler}
