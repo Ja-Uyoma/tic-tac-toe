@@ -1,21 +1,6 @@
 import { MouseEventHandler, useState } from "react";
 import { getWinner } from "./logic";
-
-function Cell({
-  value,
-  onClickHandler,
-}: {
-  value: string;
-  onClickHandler: MouseEventHandler;
-}) {
-  return (
-    <div className="border border-black cursor-pointer">
-      <button type="button" onClick={onClickHandler} className="size-full">
-        {value}
-      </button>
-    </div>
-  );
-}
+import { Cell } from "./components/Cell";
 
 function StatusBoard({ status }: { status: string }) {
   return (
