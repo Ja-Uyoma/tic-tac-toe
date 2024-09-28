@@ -94,8 +94,8 @@ function Game() {
 function App() {
   return (
     <>
-      <header className="text-center py-4">
-        <h1>Tic-Tac-Toe</h1>
+      <header className="text-center py-4 bg-slate-400">
+        <h1 className="text-white text-4xl font-medium">Tic-Tac-Toe</h1>
       </header>
 
       <main>
