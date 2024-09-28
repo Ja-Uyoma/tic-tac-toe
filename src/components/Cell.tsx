@@ -10,7 +10,11 @@ export function Cell({
 }) {
   return (
     <div className="border border-black cursor-pointer">
-      <button type="button" onClick={onClickHandler} className="size-full">
+      <button
+        type="button"
+        onClick={onClickHandler}
+        className="size-full text-8xl"
+      >
         {value}
       </button>
     </div>
