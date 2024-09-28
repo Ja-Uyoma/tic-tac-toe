@@ -45,18 +45,16 @@ function Board() {
   const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
-    if (getWinner(grid)) {
+    if (getWinner(grid) || grid[idx] != " ") {
       return;
     }
 
     const gridCopy = [...grid];
 
-    if (gridCopy[idx] === " ") {
-      gridCopy[idx] = cellValue;
-      setGrid(gridCopy);
-      setCellValue(cellValue === "X" ? "O" : "X");
-      setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
-    }
+    gridCopy[idx] = cellValue;
+    setGrid(gridCopy);
+    setCellValue(cellValue === "X" ? "O" : "X");
+    setStatus(cellValue === "X" ? "Player O's Turn" : "Player X's Turn");
   };
 
   const restartGame = () => {
