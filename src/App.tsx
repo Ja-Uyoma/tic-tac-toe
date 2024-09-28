@@ -7,7 +7,7 @@ function App() {
         <h1 className="text-white text-4xl font-medium">Tic-Tac-Toe</h1>
       </header>
 
-      <main className="flex-1">
+      <main className="flex-1 flex flex-col">
         <Board />
       </main>
 
