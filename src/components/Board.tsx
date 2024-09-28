@@ -31,7 +31,11 @@ export function Board() {
   if (winner) {
     status = "Winner: Player " + winner;
   } else {
-    status = "Player " + currentMove + "'s Turn";
+    if (grid.find((char) => char === " ")) {
+      status = "Player " + currentMove + "'s Turn";
+    } else {
+      status = "It's a Tie!";
+    }
   }
 
   return (
