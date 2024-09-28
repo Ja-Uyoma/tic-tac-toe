@@ -7,7 +7,6 @@ import { Restart } from "./Restart";
 export function Board() {
   const [grid, setGrid] = useState(new Array<string>(9).fill(" "));
   const [currentMove, setCurrentMove] = useState("X");
-  const [status, setStatus] = useState(`Player X's Turn`);
 
   const handleClick = (idx: number) => {
     if (getWinner(grid) || grid[idx] != " ") {
@@ -19,14 +18,21 @@ export function Board() {
     gridCopy[idx] = currentMove;
     setGrid(gridCopy);
     setCurrentMove(currentMove === "X" ? "O" : "X");
-    setStatus(currentMove === "X" ? "Player O's Turn" : "Player X's Turn");
   };
 
   const restartGame = () => {
     setGrid(new Array(9).fill(" "));
     setCurrentMove("X");
-    setStatus("Player X's Turn");
   };
+
+  const winner = getWinner(grid);
+  let status = "";
+
+  if (winner) {
+    status = "Winner: Player " + winner;
+  } else {
+    status = "Player " + currentMove + "'s Turn";
+  }
 
   return (
     <>
