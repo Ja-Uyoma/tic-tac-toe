@@ -38,7 +38,7 @@ export function Board() {
     <>
       <StatusBoard status={status} />
 
-      <div className="grid grid-cols-3 grid-rows-3">
+      <div className="flex-1 grid grid-cols-3 grid-rows-3">
         {grid.map((val, idx) => (
           <Cell key={idx} value={val} onClickHandler={() => handleClick(idx)} />
         ))}
