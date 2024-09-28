@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Tic Tac Toe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This is a clone of the game of tic-tac-toe
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Background
 
-## Expanding the ESLint configuration
+This application is completed as an exercise from [The Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-tic-tac-toe).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Node
+
+### Installation
+
+1. Clone the repository
+
+```sh
+git clone https://github.com/Ja-Uyoma/tic-tac-toe.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate to the project's directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```sh
+cd tic-tac-toe
 ```
+
+3. Install dependencies
+
+```sh
+npm install
+```
+
+## Usage
+
+You can now produce either a development or production build of this project. For a development build, run
+
+```sh
+npm run dev
+```
+
+and then navigate to the address `http://localhost:5173` on your browser to view the project.
+
+For a production build, run
+
+```sh
+npm run build && npm run preview
+```
+
+and then navigate to the address `http://localhost:4173` on your browser to view the project.
+
+## License
+
+This project is licensed under the MIT license. See LICENSE.md for more information.
+
+## Project Status
+
+This project is complete.
