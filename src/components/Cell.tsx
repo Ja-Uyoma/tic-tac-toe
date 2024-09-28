@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import PropTypes from "prop-types";
 
 export function Cell({
   value,
@@ -15,3 +16,8 @@ export function Cell({
     </div>
   );
 }
+
+Cell.propTypes = {
+  value: PropTypes.string,
+  onClickHandler: PropTypes.func,
+};

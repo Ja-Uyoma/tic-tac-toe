@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import PropTypes from "prop-types";
 
 export function Restart({
   onClickHandler,
@@ -17,3 +18,7 @@ export function Restart({
     </div>
   );
 }
+
+Restart.propTypes = {
+  onClickHandler: PropTypes.func,
+};

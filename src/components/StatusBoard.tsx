@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export function StatusBoard({ status }: { status: string }) {
   return (
     <div className="text-center py-2">
@@ -5,3 +7,7 @@ export function StatusBoard({ status }: { status: string }) {
     </div>
   );
 }
+
+StatusBoard.propTypes = {
+  status: PropTypes.string,
+};
