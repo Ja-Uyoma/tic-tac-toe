@@ -1,21 +1,8 @@
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import { getWinner } from "./logic";
 import { Cell } from "./components/Cell";
 import { StatusBoard } from "./components/StatusBoard";
-
-function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
-  return (
-    <div className="flex justify-center py-2">
-      <button
-        type="button"
-        onClick={onClickHandler}
-        className="text-white font-medium rounded-md bg-sky-600 border px-4 py-2 active:shadow-lg active:scale-95 transition duration-200 ease-in-out hover:bg-sky-800"
-      >
-        Restart
-      </button>
-    </div>
-  );
-}
+import { Restart } from "./components/Restart";
 
 function Board() {
   const [grid, setGrid] = useState(new Array<string>(9).fill(" "));
