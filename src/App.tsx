@@ -1,14 +1,7 @@
 import { MouseEventHandler, useState } from "react";
 import { getWinner } from "./logic";
 import { Cell } from "./components/Cell";
-
-function StatusBoard({ status }: { status: string }) {
-  return (
-    <div className="text-center py-2">
-      <p>{status}</p>
-    </div>
-  );
-}
+import { StatusBoard } from "./components/StatusBoard";
 
 function Restart({ onClickHandler }: { onClickHandler: MouseEventHandler }) {
   return (
