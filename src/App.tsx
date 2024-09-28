@@ -102,7 +102,7 @@ function App() {
         <h1 className="text-white text-4xl font-medium">Tic-Tac-Toe</h1>
       </header>
 
-      <main>
+      <main className="flex-1">
         <Game />
       </main>
 
